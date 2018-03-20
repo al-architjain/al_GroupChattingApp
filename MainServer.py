@@ -17,6 +17,7 @@ class ChatServer:
 		self.socketlist = [self.ssocket]
 		print('ChatServer [ %s ] started at port [ %s ]' % (self.host, self.port))
 
+
 	def run(self):
 		while True:
 			(sread, swrite, serr) = select.select( self.socketlist, [], [], 0)
@@ -53,7 +54,6 @@ class ChatServer:
 
 
 	def broadcast_msg(self, bmsg, skip_socket):
-		
 		for sock in self.socketlist:
 			if sock != self.ssocket and sock != skip_socket:
 				try:
@@ -66,7 +66,6 @@ class ChatServer:
 
 
 	def accept_new_connection(self):
-		
 		newcsock, newcsockaddr = self.ssocket.accept()
 		( newcsockhost, newcsockport ) = newcsockaddr
 		self.socketlist.append( newcsock )
