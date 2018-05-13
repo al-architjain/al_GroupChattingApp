@@ -38,7 +38,7 @@ class ChatServer:
 							bmsg = '[%s:%s] %s' % (host, port, recvmsg)
 							self.broadcast_msg( bmsg, sock )
 
-				`		else:
+						else:
 							host,port = sock.getpeername()
 							bmsg = 'Client [%s:%s] left \r\n' % (host,port)
 							self.broadcast_msg( bmsg, sock )
