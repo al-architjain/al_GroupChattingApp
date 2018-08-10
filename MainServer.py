@@ -77,7 +77,10 @@ class ChatServer:
 		self.broadcast_msg( bmsg, newcsock )
 		
 		
-		
-sobj = ChatServer( int(sys.argv[1]) )
-sobj.run()
+def Main():		
+	sobj = ChatServer( int(sys.argv[1]) )
+	sobj.run()
+	
 
+if __name__=='__main__':
+	Main()
